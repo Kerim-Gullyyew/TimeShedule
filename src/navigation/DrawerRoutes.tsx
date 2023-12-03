@@ -11,8 +11,12 @@ import AllActivity from '../pages/AllActivity';
 import SignOut from '../pages/SignOut';
 import Privacy from '../pages/Privacy';
 import Benefits from '../pages/Benefits';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 const Drawer = createDrawerNavigator();
 const DrawerRoutes: React.FC = () => {
+  const user: any = useTypedSelector((state) => state.login.data);
+  const Splited = user.user.full_name.split(' ');
+  const ShortName = Splited[0].substring(0, 1) + Splited[1].substring(0, 1);
   return (
     <Drawer.Navigator
       drawerContent={props => {
@@ -38,7 +42,7 @@ const DrawerRoutes: React.FC = () => {
                   justifyContent: 'center',
                 }}>
                 <Text style={{ color: 'white', fontSize: 25, fontWeight: '600' }}>
-                  MY
+                  {ShortName}
                 </Text>
               </View>
               <Text
@@ -47,7 +51,7 @@ const DrawerRoutes: React.FC = () => {
                   fontSize: 18,
                   fontWeight: '600',
                 }}>
-                Myrat Yazmuradov
+                {user.user.full_name}
               </Text>
             </View>
             <DrawerItemList {...props} />
@@ -70,7 +74,7 @@ const DrawerRoutes: React.FC = () => {
         },
       }}>
       <Drawer.Screen
-        name="Home"
+        name="Öý"
         component={Home}
         options={{
           drawerIcon: ({ focused }) => (
@@ -83,7 +87,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="Profile"
+        name="Profil"
         component={Profile}
         options={{
           drawerIcon: ({ focused }) => (
@@ -96,7 +100,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="Pay"
+        name="Töleg"
         component={Pay}
         options={{
           drawerIcon: ({ focused }) => (
@@ -109,7 +113,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="Benefit"
+        name="Girdeji"
         component={Benefits}
         options={{
           drawerIcon: ({ focused }) => (
@@ -122,7 +126,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="Allactivity"
+        name="ÄhliHereket"
         component={AllActivity}
         options={{
           drawerIcon: ({ focused }) => (
@@ -135,7 +139,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="Timer"
+        name="Wagt"
         component={Timer}
         options={{
           drawerIcon: ({ focused }) => (
@@ -148,7 +152,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="Privacy Notice"
+        name="Howpsuzlyk"
         component={Privacy}
         options={{
           drawerIcon: ({ focused }) => (
@@ -161,7 +165,7 @@ const DrawerRoutes: React.FC = () => {
         }}
       />
       <Drawer.Screen
-        name="SignOut"
+        name="Ulgamdan çykmak"
         component={SignOut}
         options={{
           drawerIcon: ({ focused }) => (

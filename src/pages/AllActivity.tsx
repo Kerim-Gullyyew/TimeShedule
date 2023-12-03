@@ -9,8 +9,9 @@ const AllActivity: React.FC = () => {
     const token = getToken();
     const id = getUserId();
     const { GetShift } = useActions();
+    const backendUrl2 = useTypedSelector((state: any) => state.constant.data);
     useEffect(() => {
-        GetShift(id, token);
+        GetShift(id, token, backendUrl2);
     }, [id, token]);
     const { data } = useTypedSelector(state => state.shift);
     const user = useTypedSelector(state => state.login);

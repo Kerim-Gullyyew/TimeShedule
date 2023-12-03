@@ -7,8 +7,11 @@ import {useTypedSelector} from './src/hooks/useTypedSelector';
 interface AppProps {
   jwt: string | undefined;
 }
+
 const App: React.FC<AppProps> = () => {
   const jwt = useTypedSelector((state: any) => state.login.data.jwt);
+
+
 
   return <View style={{flex: 1}}>{jwt ? <Routes /> : <Login />}</View>;
 };

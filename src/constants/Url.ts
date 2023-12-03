@@ -1,1 +1,1 @@
-export const backendUrl = 'http://192.168.1.136:1337'
+export const backendUrl = 'http://192.168.0.101:1337'

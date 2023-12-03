@@ -12,7 +12,7 @@ const Routes: React.FC = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName="Öý"
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: Colors.IconColorActive,
@@ -22,10 +22,10 @@ const Routes: React.FC = () => {
           },
         }}>
         <Tab.Screen
-          name="Home"
+          name="Öý"
           component={Home}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Öý',
             tabBarIcon: ({focused}) => (
               <MaterialIcons
                 name="home"
@@ -36,10 +36,10 @@ const Routes: React.FC = () => {
           }}
         />
         <Tab.Screen
-          name="Timer"
+          name="Wagt"
           component={Timer}
           options={{
-            tabBarLabel: 'timer',
+            tabBarLabel: 'Wagt',
             tabBarIcon: ({focused}) => (
               <MaterialIcons
                 name="timer"
@@ -50,10 +50,10 @@ const Routes: React.FC = () => {
           }}
         />
         <Tab.Screen
-          name="Menu"
+          name="Menýu"
           component={DrawerRoutes}
           options={{
-            tabBarLabel: 'Menu',
+            tabBarLabel: 'Menýu',
             tabBarIcon: ({focused}) => (
               <MaterialIcons
                 name="menu"

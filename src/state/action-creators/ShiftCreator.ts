@@ -13,7 +13,7 @@ interface jsonProps {
   }
 }
 
-export const Shift = (json: jsonProps, token: string | undefined) => {
+export const Shift = (json: jsonProps, token: string | undefined, backendUrl2: string) => {
   return async (dispatch: Dispatch<ShiftActionAll>) => {
     dispatch({
       type: ShiftActionType.SHIFT
@@ -26,7 +26,7 @@ export const Shift = (json: jsonProps, token: string | undefined) => {
           Authorization: "Bearer " + token,
         },
       };
-      const { data } = await axios.post(backendUrl + '/api/shifts', json, config)
+      const { data } = await axios.post(backendUrl2 + ':1337/api/shifts', json, config)
 
       dispatch({
         type: ShiftActionType.SHIFT_SUCCESS,
@@ -42,7 +42,7 @@ export const Shift = (json: jsonProps, token: string | undefined) => {
 }
 
 
-export const GetShift = (id: number | undefined, token: string | undefined) => {
+export const GetShift = (id: number | undefined, token: string | undefined, backendUrl2: string) => {
   return async (dispatch: Dispatch<ShiftActionAll>) => {
     dispatch({
       type: ShiftActionType.GET_SHIFT
@@ -54,7 +54,7 @@ export const GetShift = (id: number | undefined, token: string | undefined) => {
           Authorization: "Bearer " + token,
         },
       };
-      const { data } = await axios.get(backendUrl + '/api/users/' + id + '/?populate=*', config)
+      const { data } = await axios.get(backendUrl2 + ':1337/api/users/' + id + '/?populate=*', config)
 
       dispatch({
         type: ShiftActionType.GET_SHIFT_SUCCESS,

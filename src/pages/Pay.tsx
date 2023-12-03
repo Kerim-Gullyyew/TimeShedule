@@ -21,9 +21,10 @@ const Pay: React.FC<PayProps> = ({ }) => {
   const navigation = useNavigation<any>();
   const isFocused = useIsFocused();
   const { GetShift } = useActions();
+  const backendUrl2 = useTypedSelector((state: any) => state.constant.data);
   useEffect(() => {
     if (isFocused) {
-      GetShift(id, token);
+      GetShift(id, token, backendUrl2);
     }
   }, [id, token, isFocused]);
   return (
@@ -31,7 +32,7 @@ const Pay: React.FC<PayProps> = ({ }) => {
       <Chart month={month} day={day} />
       <View style={styles.container}>
         <View style={styles.section}>
-          <Text style={styles.text}>Next Regular Pay</Text>
+          <Text style={styles.text}>Soňky tölegler</Text>
           <View>
             <FlatList
               showsHorizontalScrollIndicator={false}
@@ -52,8 +53,8 @@ const Pay: React.FC<PayProps> = ({ }) => {
               }}
             />
           </View>
-          <Pressable onPress={() => navigation.navigate('Menu', { screen: 'Allactivity' })}>
-            <Text style={styles.text2}>View All</Text>
+          <Pressable onPress={() => navigation.navigate('Menýu', { screen: 'ÄhliHereket' })}>
+            <Text style={styles.text2}>Ählisini görmek</Text>
           </Pressable>
         </View>
       </View>

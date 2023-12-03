@@ -1,0 +1,1 @@
+export const ErrorInput = 'Ähli öýjükleri dolduryň!';

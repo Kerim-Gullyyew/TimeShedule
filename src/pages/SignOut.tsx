@@ -21,7 +21,7 @@ const SignOut: React.FC = () => {
     }, [isFocused])
     const onCancel = () => {
         setIsVisible(false);
-        navigation.navigate('Home', { screen: 'home' });
+        navigation.navigate('Öý', { screen: 'home' });
         navigation.openDrawer();
     }
     const onLogout = () => {
@@ -31,16 +31,16 @@ const SignOut: React.FC = () => {
         <View>
             <Modal backdropOpacity={0.1} animationIn='fadeInUp' isVisible={isVisible}>
                 <View style={{ backgroundColor: 'white', elevation: 8, borderRadius: 18, paddingVertical: 48, justifyContent: 'space-between', paddingHorizontal: 22 }}>
-                    <Text style={{ color: Colors.TextColor, marginBottom: 64, fontSize: 18 }}>I you sure? You want to Sign Out?</Text>
+                    <Text style={{ color: Colors.TextColor, marginBottom: 64, fontSize: 18 }}>Siz hakykatdanam ulgamdan çykmak isleýäňizmi?</Text>
                     <View style={{ justifyContent: 'space-between', paddingHorizontal: 4, flexDirection: 'row', alignItems: 'center' }}>
                         <Pressable onPress={onCancel} style={[styles.button, { backgroundColor: Colors.IconColor }]}>
                             <Text style={styles.text}>
-                                Cancel
+                                Bes et
                             </Text>
                         </Pressable>
                         <Pressable onPress={onLogout} style={[styles.button, { backgroundColor: Colors.TextLinkColor }]}>
                             <Text style={[styles.text, { fontSize: 18 }]}>
-                                Sign Out
+                                Ulgamdan çykmak
                             </Text>
                         </Pressable>
                     </View>

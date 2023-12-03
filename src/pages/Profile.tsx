@@ -28,7 +28,7 @@ const Profile: React.FC = () => {
           </View>
         </View>
         <View style={styles.info}>
-          <Text style={styles.text}>Personal info: </Text>
+          <Text style={styles.text}>Şahsy maglumat: </Text>
           <Text style={styles.text}>{user.user.full_name}</Text>
         </View>
         <View style={styles.detail1}>
@@ -37,7 +37,7 @@ const Profile: React.FC = () => {
           </View>
           <View>
             <Text style={styles.text1}>{user.user.phonenumber}</Text>
-            <Text style={styles.text2}>Home Phone</Text>
+            <Text style={styles.text2}>Telefon</Text>
           </View>
         </View>
         <View style={styles.detail1}>
@@ -46,7 +46,7 @@ const Profile: React.FC = () => {
           </View>
           <View>
             <Text style={styles.text1}>{user.user.email}</Text>
-            <Text style={styles.text2}>Primary e-mail</Text>
+            <Text style={styles.text2}>E-mail</Text>
           </View>
         </View>
         <View style={styles.detail1}>
@@ -63,8 +63,8 @@ const Profile: React.FC = () => {
         </View>
         <View style={styles.details}>
           <View style={styles.detail}>
-            <Text style={styles.text1}>${user.user.pay_rate} USD / hour</Text>
-            <Text style={styles.text2}>Pay rate</Text>
+            <Text style={styles.text1}>${user.user.pay_rate} man / sag</Text>
+            <Text style={styles.text2}>Töleg</Text>
           </View>
         </View>
       </ScrollView>

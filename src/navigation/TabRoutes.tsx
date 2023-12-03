@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 const TabRoutes: React.FC = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Öý"
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: Colors.IconColorActive,
@@ -18,10 +18,10 @@ const TabRoutes: React.FC = () => {
         },
       }}>
       <Tab.Screen
-        name="Home"
+        name="Öý"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Öý',
           tabBarIcon: ({focused}) => (
             <MaterialIcons
               name="home"
@@ -32,10 +32,10 @@ const TabRoutes: React.FC = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="Profil"
         component={Profile}
         options={{
-          tabBarLabel: 'profile',
+          tabBarLabel: 'Profil',
           tabBarIcon: ({focused}) => (
             <MaterialIcons
               name="person"
@@ -46,10 +46,10 @@ const TabRoutes: React.FC = () => {
         }}
       />
       <Tab.Screen
-        name="Menu"
+        name="Menýu"
         component={Profile}
         options={{
-          tabBarLabel: 'Menu',
+          tabBarLabel: 'Menýu',
           tabBarIcon: ({focused}) => (
             <MaterialIcons
               name="menu"

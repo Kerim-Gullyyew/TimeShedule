@@ -7,13 +7,13 @@ interface jsonProps {
   identifier: string,
   password: string
 }
-export const login = (json: jsonProps) => {
+export const login = (json: jsonProps, backendUrl2: string) => {
   return async (dispatch: Dispatch<LoginActionAll>) => {
     dispatch({
       type: LoginActionType.LOGIN
     });
     try {
-      const { data } = await axios.post(backendUrl + '/api/auth/local', json)
+      const { data } = await axios.post(backendUrl2 + ':1337/api/auth/local', json)
       dispatch({
         type: LoginActionType.LOGIN_SUCCESS,
         payload: data

@@ -3,10 +3,12 @@ import { View, StyleSheet, Text, Pressable } from 'react-native';
 import { Colors } from '../constants/Colors';
 import { useActions } from '../hooks/useActions';
 import { getToken, getUserId } from '../utils/getStates';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 const Timer: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>();
   const [active, setActive] = useState<boolean>(false);
+  const backendUrl2 = useTypedSelector((state: any) => state.constant.data);
   const token = getToken();
   const user_id = getUserId();
   const { Shift } = useActions();
@@ -33,7 +35,7 @@ const Timer: React.FC = () => {
             users_permissions_user: user_id,
           },
         };
-        Shift(json, token);
+        Shift(json, token, backendUrl2);
       }
 
     }
@@ -44,7 +46,7 @@ const Timer: React.FC = () => {
       <View style={{ flex: 1, width: '90%', rowGap: 10 }}>
         {startDate && (
           <View>
-            <Text style={styles.text3}>Started at</Text>
+            <Text style={styles.text3}>Başlan wagty</Text>
             <View style={styles.box}>
               <View>
                 <Text style={styles.text2}>
@@ -59,7 +61,7 @@ const Timer: React.FC = () => {
         )}
         {endDate && (
           <View>
-            <Text style={styles.text3}>Finished at</Text>
+            <Text style={styles.text3}>Gutaran wagty</Text>
             <View style={styles.box}>
               <View>
                 <Text style={styles.text2}>
@@ -77,13 +79,13 @@ const Timer: React.FC = () => {
         <Pressable
           onPress={Start}
           style={[styles.circle, { borderColor: Colors.TextColor }]}>
-          <Text style={[styles.text, { color: Colors.TextColor }]}>Start</Text>
+          <Text style={[styles.text, { color: Colors.TextColor }]}>Başla</Text>
         </Pressable>
       ) : (
         <Pressable
           onPress={End}
           style={[styles.circle, { borderColor: Colors.WarningColor }]}>
-          <Text style={[styles.text, { color: Colors.WarningColor }]}>End</Text>
+          <Text style={[styles.text, { color: Colors.WarningColor }]}>Gutar</Text>
         </Pressable>
       )}
     </View>

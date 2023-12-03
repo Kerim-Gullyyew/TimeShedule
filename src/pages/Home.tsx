@@ -10,13 +10,13 @@ const Home: React.FC = () => {
   );
   const navigation = useNavigation<any>();
   const onPress = () => {
-    navigation.navigate('Menu', {screen: 'Pay'});
+    navigation.navigate('Menýu', {screen: 'Töleg'});
   };
   const onBenefitPress = () => {
-    navigation.navigate('Menu', {screen: 'Benefit'});
+    navigation.navigate('Menýu', {screen: 'Girdeji'});
   }
   const onProfilePress = () => {
-    navigation.navigate('Menu', {screen: 'Profile'});
+    navigation.navigate('Menýu', {screen: 'Profil'});
   }
   return (
     <View style={styles.body}>
@@ -24,12 +24,12 @@ const Home: React.FC = () => {
         <Profile email={email} full_name={full_name} />
       </View>
       <View style={[styles.component, styles.boxes]}>
-        <Card onPress={onPress} icon="payment" title="Pay" />
-        <Card onPress={onBenefitPress} icon="query-stats" title="Benefits" />
+        <Card onPress={onPress} icon="payment" title="Töleg" />
+        <Card onPress={onBenefitPress} icon="query-stats" title="Girdejiler" />
         <Card
           onPress={onProfilePress}
           icon="person"
-          title="Profile"
+          title="Profil"
         />
       </View>
     </View>

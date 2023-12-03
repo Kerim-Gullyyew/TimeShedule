@@ -14,3 +14,7 @@ export enum ShiftActionType {
   GET_SHIFT_SUCCESS = 'get_shift_success',
   GET_SHIFT_ERROR = 'get_shift_error',
 }
+
+export enum ConstantActionType {
+  ADD_URL = 'add_url',
+}
